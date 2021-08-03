@@ -7,9 +7,9 @@ import os
 import shutil
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
-from proj_pyMongolator.archive_retriever import ArchiveGetter
-from proj_pyMongolator.dataWrapper import DataWrapper
-from proj_pyMongolator.dataPusher import DataPusher
+from src.archive_retriever import ArchiveGetter
+from src.dataWrapper import DataWrapper
+from src.dataPusher import DataPusher
 
 selected_list_of_files = []
 selection_flag = False
@@ -345,22 +345,22 @@ class TabOptionsWidget(QWidget):
 
         'image'
         welcome_img_label_iop = QLabel(self)
-        pixmap_iop = QPixmap('C:\\Users\Souvik.Roy\Documents\iop_pymongolator\proj_pyMongolator\iop-rwth-logo-resized.jpg')
+        pixmap_iop = QPixmap('/src\iop-rwth-logo-resized.jpg')
         welcome_img_label_iop.setPixmap(pixmap_iop)
-        welcome_img_label_iop.setPixmap(QPixmap("C:\\Users\Souvik.Roy\Documents\iop_pymongolator\proj_pyMongolator\iop-rwth-logo-resized.jpg"))
+        welcome_img_label_iop.setPixmap(QPixmap("/src\iop-rwth-logo-resized.jpg"))
         welcome_img_label_iop.setFixedSize(250, 80)
 
         hbox = QHBoxLayout(self)
         welcome_img_label1 = QLabel(self)
-        pixmap1 = QPixmap('C:\\Users\Souvik.Roy\Documents\iop_pymongolator\proj_pyMongolator\dpp_logo_resized.png')
+        pixmap1 = QPixmap('/src\dpp_logo_resized.png')
         welcome_img_label1.setPixmap(pixmap1)
-        welcome_img_label1.setPixmap(QPixmap("C:\\Users\Souvik.Roy\Documents\iop_pymongolator\proj_pyMongolator\dpp_logo_resized.png"))
+        welcome_img_label1.setPixmap(QPixmap("/src\dpp_logo_resized.png"))
         welcome_img_label1.setFixedSize(250, 80)
 
         welcome_img_label2 = QLabel(self)
-        pixmap2 = QPixmap('C:\\Users\Souvik.Roy\Documents\iop_pymongolator\proj_pyMongolator\gi_logo_resized.jpg')
+        pixmap2 = QPixmap('/src\gi_logo_resized.jpg')
         welcome_img_label2.setPixmap(pixmap2)
-        welcome_img_label2.setPixmap(QPixmap("C:\\Users\Souvik.Roy\Documents\iop_pymongolator\proj_pyMongolator\gi_logo_resized.jpg"))
+        welcome_img_label2.setPixmap(QPixmap("/src\gi_logo_resized.jpg"))
         welcome_img_label2.setFixedSize(250, 80)
         hbox.addWidget(welcome_img_label1)
         hbox.addWidget(welcome_img_label_iop)
@@ -368,10 +368,10 @@ class TabOptionsWidget(QWidget):
 
         'rwth image'
         rwth_img2_label = QLabel(self)
-        pixmap_rwth = QPixmap('C:\\Users\Souvik.Roy\Documents\iop_pymongolator\proj_pyMongolator\RWTH-Aachen-University.jpg')
+        pixmap_rwth = QPixmap('/src\RWTH-Aachen-University.jpg')
         rwth_img2_label.setPixmap(pixmap_rwth)
         rwth_img2_label.setPixmap(
-            QPixmap("C:\\Users\Souvik.Roy\Documents\iop_pymongolator\proj_pyMongolator\RWTH-Aachen-University.jpg"))
+            QPixmap("/src\RWTH-Aachen-University.jpg"))
         rwth_img2_label.setFixedSize(900, 400)
 
         #  self.tab1_home.layout.addWidget(welcome_img_label_iop, alignment=Qt.AlignCenter)
@@ -508,10 +508,10 @@ class TabOptionsWidget(QWidget):
         hbox_info_details.addWidget(self.show_details_btn)
         'image'
         rwth_img2_label = QLabel(self)
-        pixmap_rwth = QPixmap('C:\\Users\Souvik.Roy\Documents\iop_pymongolator\proj_pyMongolator\RWTH-Aachen-University.jpg')
+        pixmap_rwth = QPixmap('/src\RWTH-Aachen-University.jpg')
         rwth_img2_label.setPixmap(pixmap_rwth)
         rwth_img2_label.setPixmap(
-            QPixmap("C:\\Users\Souvik.Roy\Documents\iop_pymongolator\proj_pyMongolator\RWTH-Aachen-University.jpg"))
+            QPixmap("/src\RWTH-Aachen-University.jpg"))
         rwth_img2_label.setFixedSize(900, 400)
 
         'form layout containing all elements'
@@ -730,17 +730,17 @@ class TabOptionsWidget(QWidget):
 
         # mongodb image
         mongo_label = QLabel(self)
-        pixmap_mongo = QPixmap('C:\\Users\Souvik.Roy\Documents\iop_pymongolator\proj_pyMongolator\mongodb_kleinesbild.PNG')
+        pixmap_mongo = QPixmap('/src\mongodb_kleinesbild.PNG')
         mongo_label.setPixmap(pixmap_mongo)
-        mongo_label.setPixmap(QPixmap('C:\\Users\Souvik.Roy\Documents\iop_pymongolator\proj_pyMongolator\mongodb_kleinesbild.PNG'))
+        mongo_label.setPixmap(QPixmap('/src\mongodb_kleinesbild.PNG'))
         mongo_label.setFixedSize(350, 150)
 
         'another image'
         rwth_img2_label = QLabel(self)
-        pixmap_rwth = QPixmap('C:\\Users\Souvik.Roy\Documents\iop_pymongolator\proj_pyMongolator\RWTH-Aachen-University.jpg')
+        pixmap_rwth = QPixmap('/src\RWTH-Aachen-University.jpg')
         rwth_img2_label.setPixmap(pixmap_rwth)
         rwth_img2_label.setPixmap(
-            QPixmap("C:\\Users\Souvik.Roy\Documents\iop_pymongolator\proj_pyMongolator\RWTH-Aachen-University.jpg"))
+            QPixmap("/src\RWTH-Aachen-University.jpg"))
         rwth_img2_label.setFixedSize(900, 400)
 
         'push into db button'
@@ -849,7 +849,7 @@ class TabOptionsWidget(QWidget):
                     self._already_prepared_list.append(self.selected_item_prepare_list)
                     self.activate_all_fields()
                     self.onResetFieldsBtnClicked()
-                    QMessageBox.information(self, "pyMongolator", "Success: Successfully Parsed")
+                    QMessageBox.information(self, "pyMongolator", "Success: 1 File Successfully Parsed")
                     self.to_prepare_list.remove(self.selected_item_prepare_list)
                     self.refresh_prepare_list()
                     print('remaining items in list: ', self.to_prepare_list)
@@ -886,33 +886,36 @@ class TabOptionsWidget(QWidget):
 
     def onAutoFillPrepareBtnClicked(self):
         if self._flag_for_display_prepare and not self._flag_for_no_items_selected_in_liswidget and self._flag_for_selection_in_listwidget:
-            filename_fragments = self.selected_item_prepare_list.split('+')
-            tmp_for_Date = filename_fragments[-1]
-            self.operator_field.setText(filename_fragments[-2])
-            self.date_field.setText(tmp_for_Date[tmp_for_Date.rfind('=')+1:tmp_for_Date.rfind('.')])
-            self.material_field.setText(filename_fragments[-4])
-            self.exp_type.setText(filename_fragments[-3])
-            'insert code for selective manual input allowance'
-            if filename_fragments[-3] in ['LOM', 'SEM', 'EBSD']:
-                self.load_mharndess.setEnabled(False)
-                self.din_std.setEnabled(False)
-                self.type_psd.setEnabled(False)
-            elif filename_fragments[-3] in ['Tensile Test', 'tensile', 'Tensile', 'Torsion','Torsion Test', 'Wear Test','Wear', 'Crash Test', 'Crash', 'Charpy', 'Charpy Impact Test', 'Micorhardness']:
-                self.type_psd.setEnabled(False)
-                self.psd.setEnabled(False)
-                self.magnification.setEnabled(False)
-                self.default_psd_powder.setEnabled(False)
-                self.charge_powder.setEnabled(False)
-                self.lot_powder.setEnabled(False)
-                self.mfg_powder.setEnabled(False)
-                self.etchant.setEnabled(False)
-                self.etc_time.setEnabled(False)
-            elif filename_fragments[-3] in ['Camsizer', 'PSD']:
-                self.magnification.setEnabled(False)
-                self.load_mharndess.setEnabled(False)
-                self.etchant.setEnabled(False)
-                self.etc_time.setEnabled(False)
-                self.din_std.setEnabled(False)
+            if self.selected_item_prepare_list.count('+') >= 3:
+                filename_fragments = self.selected_item_prepare_list.split('+')
+                tmp_for_Date = filename_fragments[-1]
+                self.operator_field.setText(filename_fragments[-2])
+                self.date_field.setText(tmp_for_Date[tmp_for_Date.rfind('=')+1:tmp_for_Date.rfind('.')])
+                self.material_field.setText(filename_fragments[-4])
+                self.exp_type.setText(filename_fragments[-3])
+                'insert code for selective manual input allowance'
+                if filename_fragments[-3] in ['LOM', 'SEM', 'EBSD']:
+                    self.load_mharndess.setEnabled(False)
+                    self.din_std.setEnabled(False)
+                    self.type_psd.setEnabled(False)
+                elif filename_fragments[-3] in ['Tensile Test', 'tensile', 'Tensile', 'Torsion','Torsion Test', 'Wear Test','Wear', 'Crash Test', 'Crash', 'Charpy', 'Charpy Impact Test', 'Micorhardness']:
+                    self.type_psd.setEnabled(False)
+                    self.psd.setEnabled(False)
+                    self.magnification.setEnabled(False)
+                    self.default_psd_powder.setEnabled(False)
+                    self.charge_powder.setEnabled(False)
+                    self.lot_powder.setEnabled(False)
+                    self.mfg_powder.setEnabled(False)
+                    self.etchant.setEnabled(False)
+                    self.etc_time.setEnabled(False)
+                elif filename_fragments[-3] in ['Camsizer', 'PSD']:
+                    self.magnification.setEnabled(False)
+                    self.load_mharndess.setEnabled(False)
+                    self.etchant.setEnabled(False)
+                    self.etc_time.setEnabled(False)
+                    self.din_std.setEnabled(False)
+            else:
+                QMessageBox.information(self, "pyMongolator", "Error: Incorrect Naming convention used.")
         else:
             QMessageBox.information(self, "pyMongolator", "Error: No Selection done")
 
@@ -927,7 +930,6 @@ class TabOptionsWidget(QWidget):
     def selectionInListOfPrepareChanged(self):
         self._flag_for_selection_in_listwidget = True
         if self._flag_for_clear_selection:
-            # print("self.list_widget_selected.currentRow():", self.list_widget_selected.currentRow())
             if self.list_widget_selected.currentRow():
                 if self.list_widget_selected.currentRow() != -1:
                     self.selected_item_prepare_list = self.to_prepare_list[self.list_widget_selected.currentRow()]
@@ -939,9 +941,6 @@ class TabOptionsWidget(QWidget):
         self._flag_for_selection_in_listwidget = True
         if self.list_widget_selected.selectedItems():
             if self.list_widget_selected.currentRow() != -1:
-                #  print('to prepare list: ', self.to_prepare_list)
-                # print('list widget in error time: ', self.list_widget_selected, self.list_widget_selected.currentRow())
-                'check what is going wrong'
                 self.selected_item_prepare_list = self.to_prepare_list[self.list_widget_selected.currentRow()]
                 self._flag_for_no_items_selected_in_liswidget = False
                 self.activate_all_fields()
@@ -949,7 +948,6 @@ class TabOptionsWidget(QWidget):
     def onPushDBbtnClicked(self):
         self._connection_str = self.mongo_conn_field.text()
         dataPusher = DataPusher(self.converted_list, self._connection_str)
-        # print('no. of sucess and failures: ', dataPusher.processer())
         num_success = dataPusher.processer()[0]
         display_str = "Versuch Erfolgreich!\nSuccessful attempts: {0}".format(dataPusher.processer()[0])
         QMessageBox.information(self, "pyMongolator", display_str)
