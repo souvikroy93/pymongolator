@@ -886,7 +886,7 @@ class TabOptionsWidget(QWidget):
 
     def onAutoFillPrepareBtnClicked(self):
         if self._flag_for_display_prepare and not self._flag_for_no_items_selected_in_liswidget and self._flag_for_selection_in_listwidget:
-            if self.selected_item_prepare_list.count('+') >= 3:
+            if self.selected_item_prepare_list.count('+') >= 4:
                 filename_fragments = self.selected_item_prepare_list.split('+')
                 tmp_for_Date = filename_fragments[-1]
                 self.operator_field.setText(filename_fragments[-2])
