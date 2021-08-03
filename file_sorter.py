@@ -1,4 +1,4 @@
-from proj_pyMongolator.image_handler_singular import collected_filepath_receiver
+from src.image_handler_singular import collected_filepath_receiver
 
 
 def file_sorter(unsorted_list_of_files):
